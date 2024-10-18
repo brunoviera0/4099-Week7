@@ -22,7 +22,21 @@ newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
 ######
 ###### Space for app engine connection (using placeholder sentiment score for now)
-######
+######def call_app_engine_sentiment(text):
+    #"""Send the article's text to App Engine for sentiment scoring."""
+    #response = requests.post(SENTIMENT_API_URL, json={'text': text})
+
+    #if response.status_code == 200:
+        #sentiment_score = response.json().get('sentiment_score', 0)
+        #return sentiment_score
+    #else:
+        #print(f"Error: Failed to get sentiment score, status code: {response.status_code}")
+        #return 0
+
+#sentiment_score = call_vm_sentiment(article['content'] or article['description'] or '')
+
+#SENTIMENT_API_URL = 'http://<your-vm-ip>:<port>/path_running'
+#external IP of VM: 34.69.122.74
 
 def fetch_news(topic):
     articles = newsapi.get_everything(q=topic, language='en', sort_by='publishedAt', page_size=5)
