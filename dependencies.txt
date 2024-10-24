@@ -1,2 +1,0 @@
-pip install newsapi-python
-pip install matplotlib
